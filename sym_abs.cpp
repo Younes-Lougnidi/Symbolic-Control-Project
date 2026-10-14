@@ -112,7 +112,8 @@ int main() {
                 }
                 g[(size_t)(xi - 1) * n_sigma + (sigma - 1)] = {coord2state<3>(cmin, p_x),
                                                                coord2state<3>(cmax, p_x)};
-
+                // this is meant to compute the tolerance of any minor fluctuations due to exterior unprecedent not taken into account conditions. 
+                // it computes the robust margins, in the worst case so the maximum possible reachable set.
                 for (int i = 0; i < 3; ++i) {
                     double lo = reach_lo[i] - bound_x_lo[i];
                     double hi = bound_x_lo[i] - reach_hi[i];
