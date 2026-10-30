@@ -1,0 +1,68 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {part}{I\hspace  {1em}Mobile Robot Symbolic Control}{2}{part.1}\protected@file@percent }
+\newlabel{part:mobile-robot}{{I}{2}{}{part.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Context and Objective}{2}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Problem Overview}{2}{subsection.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Work Plan}{3}{subsection.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}Report Organization}{3}{subsection.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Symbolic Abstraction and Reachability Analysis}{3}{section.2}\protected@file@percent }
+\newlabel{sec:abstraction}{{2}{3}{Symbolic Abstraction and Reachability Analysis}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Theory}{3}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}From a continuous state space to a finite model}{4}{subsubsection.2.1.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The two stages we studied: discretizing states and inputs, then enclosing their possible next states.}}{4}{figure.caption.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Partitioning states and selecting commands}{5}{subsubsection.2.1.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces State cells, the outside state, and the interfaces $q$ and $p$. The small grid illustrates the definitions; it is not the robot's full grid.}}{5}{figure.caption.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3}Defining transitions through over-approximation}{5}{subsubsection.2.1.3}\protected@file@percent }
+\newlabel{eq:enclosure}{{2}{5}{Defining transitions through over-approximation}{equation.2.2}{}}
+\newlabel{eq:successors}{{3}{5}{Defining transitions through over-approximation}{equation.2.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The source cell is blue, the reachable image is enclosed by the dashed box $G$, and the orange cells become symbolic successors. This is a schematic example, not a robot simulation.}}{6}{figure.caption.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.4}Two ways to enclose a reachable set}{6}{subsubsection.2.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Monotone dynamics.}{6}{paragraph*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Bounded derivatives.}{7}{paragraph*.5}\protected@file@percent }
+\newlabel{eq:bounded-derivatives}{{4}{8}{Bounded derivatives}{equation.2.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Comparison of reachability methods: corner bounds for a monotone system (left) and a centre-based enclosure using bounded derivatives (right).}}{8}{figure.caption.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.5}Applying the method to the mobile robot: Section 3.1}{8}{subsubsection.2.1.5}\protected@file@percent }
+\newlabel{eq:robot}{{5}{8}{Applying the method to the mobile robot: Section 3.1}{equation.2.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The robot state variables and control inputs.}}{9}{figure.caption.7}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Regions defined in the reference article. The heading is unrestricted in every region.}}{9}{table.caption.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces The four regions in the position plane. The marked starting point is illustrative; no closed-loop trajectory has been implemented by our group.}}{10}{figure.caption.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces The specification automaton. Label $i$ denotes region $R_i$; label $0$ denotes a point outside all four regions.}}{11}{figure.caption.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.6}Robot discretization: the beginning of Section 3.2}{11}{subsubsection.2.1.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.7}Derivative bounds and the size of the enclosure}{11}{subsubsection.2.1.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Implementation}{12}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Overview of the implementation}{12}{subsubsection.2.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Subtask 1: \texttt  {coord2state.hpp}}{12}{subsubsection.2.2.2}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}{\ignorespaces \texttt  {coord2state.hpp}: from cell coordinates to a unique state ID.}}{13}{lstlisting.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Explanation/Analysis.}{13}{paragraph*.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Subtask 2: \texttt  {state2coord.hpp}}{13}{subsubsection.2.2.3}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}{\ignorespaces \texttt  {state2coord.hpp}: from a state ID back to cell coordinates.}}{13}{lstlisting.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Explanation/Analysis.}{14}{paragraph*.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.4}Subtask 3: \texttt  {dynamics.hpp}}{14}{subsubsection.2.2.4}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3}{\ignorespaces \texttt  {dynamics.hpp}: dynamics, Jacobian bounds, constraints and discretization settings.}}{14}{lstlisting.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Explanation/Analysis.}{15}{paragraph*.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.5}Assembly: \texttt  {symb\_abs.cpp}}{16}{subsubsection.2.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Helper method.}{16}{paragraph*.14}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {4}{\ignorespaces Matrix--vector multiplication helper.}}{16}{lstlisting.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{State discretization.}{16}{paragraph*.15}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {5}{\ignorespaces State discretization.}}{16}{lstlisting.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Input discretization.}{16}{paragraph*.16}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6}{\ignorespaces Input discretization.}}{17}{lstlisting.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Concretization function.}{17}{paragraph*.17}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7}{\ignorespaces Concretization function.}}{17}{lstlisting.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Disturbance setup.}{17}{paragraph*.18}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {8}{\ignorespaces Disturbance setup.}}{17}{lstlisting.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Simulation: computation of the reachable set.}{18}{paragraph*.19}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {9}{\ignorespaces Over-approximation of the reachable set.}}{18}{lstlisting.9}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {10}{\ignorespaces Cells intersected by the reachable set.}}{18}{lstlisting.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Symbolic Controller Synthesis}{19}{section.3}\protected@file@percent }
+\newlabel{sec:synthesis}{{3}{19}{Symbolic Controller Synthesis}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Theory}{19}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Implementation}{19}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Concretization and Simulation}{19}{section.4}\protected@file@percent }
+\newlabel{sec:concretization}{{4}{19}{Concretization and Simulation}{section.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{19}{section.5}\protected@file@percent }
+\gdef \@abspage@last{20}
