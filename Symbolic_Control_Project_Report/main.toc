@@ -1,0 +1,37 @@
+\contentsline {part}{I\hspace {1em}Mobile Robot Symbolic Control}{2}{part.1}%
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Context and Objective}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Problem Overview}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Work Plan}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Report Organization}{3}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Symbolic Abstraction and Reachability Analysis}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Theory}{3}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}From a continuous state space to a finite model}{4}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Partitioning states and selecting commands}{5}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Defining transitions through over-approximation}{5}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Two ways to enclose a reachable set}{6}{subsubsection.2.1.4}%
+\contentsline {paragraph}{Monotone dynamics.}{6}{paragraph*.4}%
+\contentsline {paragraph}{Bounded derivatives.}{7}{paragraph*.5}%
+\contentsline {subsubsection}{\numberline {2.1.5}Applying the method to the mobile robot: Section 3.1}{8}{subsubsection.2.1.5}%
+\contentsline {subsubsection}{\numberline {2.1.6}Robot discretization: the beginning of Section 3.2}{11}{subsubsection.2.1.6}%
+\contentsline {subsubsection}{\numberline {2.1.7}Derivative bounds and the size of the enclosure}{11}{subsubsection.2.1.7}%
+\contentsline {subsection}{\numberline {2.2}Implementation}{12}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Overview of the implementation}{12}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Subtask 1: \texttt {coord2state.hpp}}{12}{subsubsection.2.2.2}%
+\contentsline {paragraph}{Explanation/Analysis.}{13}{paragraph*.11}%
+\contentsline {subsubsection}{\numberline {2.2.3}Subtask 2: \texttt {state2coord.hpp}}{13}{subsubsection.2.2.3}%
+\contentsline {paragraph}{Explanation/Analysis.}{14}{paragraph*.12}%
+\contentsline {subsubsection}{\numberline {2.2.4}Subtask 3: \texttt {dynamics.hpp}}{14}{subsubsection.2.2.4}%
+\contentsline {paragraph}{Explanation/Analysis.}{15}{paragraph*.13}%
+\contentsline {subsubsection}{\numberline {2.2.5}Assembly: \texttt {symb\_abs.cpp}}{16}{subsubsection.2.2.5}%
+\contentsline {paragraph}{Helper method.}{16}{paragraph*.14}%
+\contentsline {paragraph}{State discretization.}{16}{paragraph*.15}%
+\contentsline {paragraph}{Input discretization.}{16}{paragraph*.16}%
+\contentsline {paragraph}{Concretization function.}{17}{paragraph*.17}%
+\contentsline {paragraph}{Disturbance setup.}{17}{paragraph*.18}%
+\contentsline {paragraph}{Simulation: computation of the reachable set.}{18}{paragraph*.19}%
+\contentsline {section}{\numberline {3}Symbolic Controller Synthesis}{19}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Theory}{19}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Implementation}{19}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Concretization and Simulation}{19}{section.4}%
+\contentsline {section}{\numberline {5}Conclusion}{19}{section.5}%
