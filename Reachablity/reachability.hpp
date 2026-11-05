@@ -44,7 +44,7 @@ inline bool successors_in(const std::array<int32_t, 2>& box, const Membership& A
     return true;
 }
 
-// Accepts std::array<int,N> or bcontaining state IDs.
+// Accepts std::array<int,N> or std::vector<int,N> containing state IDs.
 template<class StateSet>
 std::vector<Choice> pred(const Transitions& g, const StateSet& A) {
     if (g.size() != static_cast<std::size_t>(n_states)*n_commands)

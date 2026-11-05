@@ -16,6 +16,14 @@
 #include "coord2state.hpp"
 #include "state2coord.hpp"
 
+// CONNECTION: optional safety entry point, using the tables built below directly.
+// Without RUN_SAFETY the original standalone abstraction build stays unchanged.
+#ifdef RUN_SAFETY
+int run_safety(const std::vector<std::array<int32_t, 2>>& g,
+               const std::vector<Vec2>& val_u, const Vec3& d_x,
+               const std::array<int, 4>& p_x, int n_xi, int n_sigma);
+#endif
+
 static Vec3 matvec(const Mat3& M, const Vec3& v) {
     Vec3 r{};
     for (int i = 0; i < 3; ++i)
@@ -137,5 +145,9 @@ int main() {
     for (const auto& u : val_u) out.write(reinterpret_cast<const char*>(u.data()), sizeof(double) * 2);
     out.write(reinterpret_cast<const char*>(g.data()), sizeof(int32_t) * 2 * g.size());
     std::printf("Saved symb_abs.bin\n");
+    // CONNECTION: pass the existing data by reference; no copy or binary reload.
+#ifdef RUN_SAFETY
+    return run_safety(g, val_u, d_x, p_x, n_xi, n_sigma);
+#endif
     return 0;
 }
