@@ -918,4 +918,199 @@ File: figures/state_input_discretization.png Graphic file (type png)
 <use figures/state_input_discretization.png>
 Package pdftex.def Info: figures/state_input_discretization.png  used on input line 304.
 (pdftex.def)             Requested size: 455.23709pt x 194.57466pt.
-<figu
+<figures/transition_overapproximation.png, id=281, 436.5108pt x 452.69928pt>
+File: figures/transition_overapproximation.png Graphic file (type png)
+<use figures/transition_overapproximation.png>
+Package pdftex.def Info: figures/transition_overapproximation.png  used on input line 335.
+(pdftex.def)             Requested size: 267.79646pt x 277.728pt.
+File: figures/UM6P_logo.png Graphic file (type png)
+<use figures/UM6P_logo.png>
+Package pdftex.def Info: figures/UM6P_logo.png  used on input line 340.
+(pdftex.def)             Requested size: 71.12558pt x 71.13188pt.
+File: figures/CC_logo.png Graphic file (type png)
+<use figures/CC_logo.png>
+Package pdftex.def Info: figures/CC_logo.png  used on input line 340.
+(pdftex.def)             Requested size: 59.75066pt x 59.75095pt.
+ [6 <./figures/state_input_discretization.png>]
+File: figures/UM6P_logo.png Graphic file (type png)
+<use figures/UM6P_logo.png>
+Package pdftex.def Info: figures/UM6P_logo.png  used on input line 371.
+(pdftex.def)             Requested size: 71.12558pt x 71.13188pt.
+File: figures/CC_logo.png Graphic file (type png)
+<use figures/CC_logo.png>
+Package pdftex.def Info: figures/CC_logo.png  used on input line 371.
+(pdftex.def)             Requested size: 59.75066pt x 59.75095pt.
+ [7 <./figures/transition_overapproximation.png>]
+File: figures/UM6P_logo.png Graphic file (type png)
+<use figures/UM6P_logo.png>
+Package pdftex.def Info: figures/UM6P_logo.png  used on input line 452.
+(pdftex.def)             Requested size: 71.12558pt x 71.13188pt.
+File: figures/CC_logo.png Graphic file (type png)
+<use figures/CC_logo.png>
+Package pdftex.def Info: figures/CC_logo.png  used on input line 452.
+(pdftex.def)             Requested size: 59.75066pt x 59.75095pt.
+ [8]
+<figures/reachability_methods_english.png, id=306, 786.87576pt x 384.76547pt>
+File: figures/reachability_methods_english.png Graphic file (type png)
+<use figures/reachability_methods_english.png>
+Package pdftex.def Info: figures/reachability_methods_english.png  used on input line 455.
+(pdftex.def)             Requested size: 455.25963pt x 222.61224pt.
+File: figures/UM6P_logo.png Graphic file (type png)
+<use figures/UM6P_logo.png>
+Package pdftex.def Info: figures/UM6P_logo.png  used on input line 488.
+(pdftex.def)             Requested size: 71.12558pt x 71.13188pt.
+File: figures/CC_logo.png Graphic file (type png)
+<use figures/CC_logo.png>
+Package pdftex.def Info: figures/CC_logo.png  used on input line 488.
+(pdftex.def)             Requested size: 59.75066pt x 59.75095pt.
+ [9 <./figures/reachability_methods_english.png>]
+<figures/robot_model.png, id=315, 542.025pt x 423.79128pt>
+File: figures/robot_model.png Graphic file (type png)
+<use figures/robot_model.png>
+Package pdftex.def Info: figures/robot_model.png  used on input line 491.
+(pdftex.def)             Requested size: 355.20679pt x 277.72435pt.
+<figures/robot_workspace.png, id=316, 497.2176pt x 510.51527pt>
+File: figures/robot_workspace.png Graphic file (type png)
+<use figures/robot_workspace.png>
+Package pdftex.def Info: figures/robot_workspace.png  used on input line 521.
+(pdftex.def)             Requested size: 270.48886pt x 277.72285pt.
+File: figures/UM6P_logo.png Graphic file (type png)
+<use figures/UM6P_logo.png>
+Package pdftex.def Info: figures/UM6P_logo.png  used on input line 525.
+(pdftex.def)             Requested size: 71.12558pt x 71.13188pt.
+File: figures/CC_logo.png Graphic file (type png)
+<use figures/CC_logo.png>
+Package pdftex.def Info: figures/CC_logo.png  used on input line 525.
+(pdftex.def)             Requested size: 59.75066pt x 59.75095pt.
+ [10 <./figures/robot_model.png>]
+<figures/specification_automaton.png, id=324, 785.43036pt x 438.53436pt>
+File: figures/specification_automaton.png Graphic file (type png)
+<use figures/specification_automaton.png>
+Package pdftex.def Info: figures/specification_automaton.png  used on input line 537.
+(pdftex.def)             Requested size: 455.2503pt x 254.18282pt.
+File: figures/UM6P_logo.png Graphic file (type png)
+<use figures/UM6P_logo.png>
+Package pdftex.def Info: figures/UM6P_logo.png  used on input line 541.
+(pdftex.def)             Requested size: 71.12558pt x 71.13188pt.
+File: figures/CC_logo.png Graphic file (type png)
+<use figures/CC_logo.png>
+Package pdftex.def Info: figures/CC_logo.png  used on input line 541.
+(pdftex.def)             Requested size: 59.75066pt x 59.75095pt.
+ [11 <./figures/robot_workspace.png>]
+File: figures/UM6P_logo.png Graphic file (type png)
+<use figures/UM6P_logo.png>
+Package pdftex.def Info: figures/UM6P_logo.png  used on input line 586.
+(pdftex.def)             Requested size: 71.12558pt x 71.13188pt.
+File: figures/CC_logo.png Graphic file (type png)
+<use figures/CC_logo.png>
+Package pdftex.def Info: figures/CC_logo.png  used on input line 586.
+(pdftex.def)             Requested size: 59.75066pt x 59.75095pt.
+ [12 <./figures/specification_automaton.png>]
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 624.
+File: figures/UM6P_logo.png Graphic file (type png)
+<use figures/UM6P_logo.png>
+Package pdftex.def Info: figures/UM6P_logo.png  used on input line 628.
+(pdftex.def)             Requested size: 71.12558pt x 71.13188pt.
+File: figures/CC_logo.png Graphic file (type png)
+<use figures/CC_logo.png>
+Package pdftex.def Info: figures/CC_logo.png  used on input line 628.
+(pdftex.def)             Requested size: 59.75066pt x 59.75095pt.
+ [13] (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/02/21 1.10 listings language file
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/02/21 1.10 listings language file
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 629.
+File: figures/UM6P_logo.png Graphic file (type png)
+<use figures/UM6P_logo.png>
+Package pdftex.def Info: figures/UM6P_logo.png  used on input line 678.
+(pdftex.def)             Requested size: 71.12558pt x 71.13188pt.
+File: figures/CC_logo.png Graphic file (type png)
+<use figures/CC_logo.png>
+Package pdftex.def Info: figures/CC_logo.png  used on input line 678.
+(pdftex.def)             Requested size: 59.75066pt x 59.75095pt.
+ [14]
+File: figures/UM6P_logo.png Graphic file (type png)
+<use figures/UM6P_logo.png>
+Package pdftex.def Info: figures/UM6P_logo.png  used on input line 727.
+(pdftex.def)             Requested size: 71.12558pt x 71.13188pt.
+File: figures/CC_logo.png Graphic file (type png)
+<use figures/CC_logo.png>
+Package pdftex.def Info: figures/CC_logo.png  used on input line 727.
+(pdftex.def)             Requested size: 59.75066pt x 59.75095pt.
+ [15]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 760.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+File: figures/UM6P_logo.png Graphic file (type png)
+<use figures/UM6P_logo.png>
+Package pdftex.def Info: figures/UM6P_logo.png  used on input line 779.
+(pdftex.def)             Requested size: 71.12558pt x 71.13188pt.
+File: figures/CC_logo.png Graphic file (type png)
+<use figures/CC_logo.png>
+Package pdftex.def Info: figures/CC_logo.png  used on input line 779.
+(pdftex.def)             Requested size: 59.75066pt x 59.75095pt.
+ [16{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+File: figures/UM6P_logo.png Graphic file (type png)
+<use figures/UM6P_logo.png>
+Package pdftex.def Info: figures/UM6P_logo.png  used on input line 823.
+(pdftex.def)             Requested size: 71.12558pt x 71.13188pt.
+File: figures/CC_logo.png Graphic file (type png)
+<use figures/CC_logo.png>
+Package pdftex.def Info: figures/CC_logo.png  used on input line 823.
+(pdftex.def)             Requested size: 59.75066pt x 59.75095pt.
+ [17]
+File: figures/UM6P_logo.png Graphic file (type png)
+<use figures/UM6P_logo.png>
+Package pdftex.def Info: figures/UM6P_logo.png  used on input line 878.
+(pdftex.def)             Requested size: 71.12558pt x 71.13188pt.
+File: figures/CC_logo.png Graphic file (type png)
+<use figures/CC_logo.png>
+Package pdftex.def Info: figures/CC_logo.png  used on input line 878.
+(pdftex.def)             Requested size: 59.75066pt x 59.75095pt.
+ [18]
+File: figures/UM6P_logo.png Graphic file (type png)
+<use figures/UM6P_logo.png>
+Package pdftex.def Info: figures/UM6P_logo.png  used on input line 955.
+(pdftex.def)             Requested size: 71.12558pt x 71.13188pt.
+File: figures/CC_logo.png Graphic file (type png)
+<use figures/CC_logo.png>
+Package pdftex.def Info: figures/CC_logo.png  used on input line 955.
+(pdftex.def)             Requested size: 59.75066pt x 59.75095pt.
+ [19]
+File: figures/UM6P_logo.png Graphic file (type png)
+<use figures/UM6P_logo.png>
+Package pdftex.def Info: figures/UM6P_logo.png  used on input line 968.
+(pdftex.def)             Requested size: 71.12558pt x 71.13188pt.
+File: figures/CC_logo.png Graphic file (type png)
+<use figures/CC_logo.png>
+Package pdftex.def Info: figures/CC_logo.png  used on input line 968.
+(pdftex.def)             Requested size: 59.75066pt x 59.75095pt.
+ [20] (./main.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+ ***********
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 695F2A66836569548C1769E477FFBEBB;7127.
+ ) 
+Here is how much of TeX's memory you used:
+ 32975 strings out of 474116
+ 646494 string characters out of 5743682
+ 2175187 words of memory out of 5000000
+ 54366 multiletter control sequences out of 15000+600000
+ 641007 words of font info for 198 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 93i,18n,99p,1101b,2038s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (21 pages, 1348448 bytes).
+PDF statistics:
+ 650 PDF objects out of 1000 (max. 8388607)
+ 541 compressed objects within 6 object streams
+ 216 named destinations out of 1000 (max. 500000)
+ 47594 words of extra memory for PDF output out of 51595 (max. 10000000)
+
