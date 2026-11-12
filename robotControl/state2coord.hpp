@@ -2,7 +2,7 @@
 // Single state number (1-based) -> grid coordinates (one index per dimension, 1-based).
 // MATLAB: I(k) = floor(mod(i-1, p(k+1)) / p(k)) + 1
 #pragma once
-#include <array>
+#include <array> 
 
 template <size_t N>
 std::array<int, N> state2coord(int i, const std::array<int, N + 1>& p) {
