@@ -1,3 +1,4 @@
+#pragma once 
 #include <vector>
 #include "../robotControl/dynamics.hpp"
 #include "../robotControl/state2coord.hpp"
@@ -33,7 +34,7 @@ R_{i}, build Dis(R_{i}) being the descretization of R_{i}.
 */
 
 // turns a real life box into cells:
-std::vector<int> boxToCells(double lb1,double ub1,double lb2,double ub2){
+inline std::vector<int> boxToCells(double lb1,double ub1,double lb2,double ub2){
     std::vector<int> result;
 
     // we need to find the bottom left in the first slice:
@@ -64,7 +65,7 @@ std::vector<int> boxToCells(double lb1,double ub1,double lb2,double ub2){
 
 
 // label method checks all regions
-Region label(int cell){
+inline Region label(int cell){
 
     std::vector<int> R1 = boxToCells(4,5,8.5,9.5);
     std::vector<int> R2 = boxToCells(8.5,9.5,2,3);
@@ -83,7 +84,7 @@ Region label(int cell){
 // the mission table
 enum class Mission { START, VISITED_R1, VISITED_R2, SUCCESS, FAILURE };
 
-Mission update_mission(Mission previous, Region current){
+inline Mission update_mission(Mission previous, Region current){
 
     if (previous == Mission::SUCCESS || previous == Mission::FAILURE) return previous;
 
