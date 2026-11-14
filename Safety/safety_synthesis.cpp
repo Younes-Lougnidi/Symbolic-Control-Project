@@ -21,6 +21,7 @@
 #include <random>
 #include <stdexcept>
 #include <vector>
+#include "safety_synthesis.hpp"
 // CONNECTION: reuse the existing dynamics and coordinate helpers directly.
 #include "../robotControl/dynamics.hpp"
 #include "../robotControl/coord2state.hpp"
@@ -29,26 +30,11 @@
 using namespace std;
 using namespace dyn; // CONNECTION: the original safety functions use these grid names.
 
-// CONNECTION: references to the existing abstraction data, keeping the original
-// safety function signatures. This view does not build, copy, or load any data.
-struct SymbolicAbstraction {
-    const vector<array<int32_t, 2>>& g;
-    const vector<Vec2>& val_u;
-    const Vec3& d_x;
-    const array<int, 4>& p_x;
-    int n_xi, n_sigma;
-};
-
 constexpr double R4[4] = {3.0, 7.0, 3.0, 7.0};   // x1min, x1max, x2min, x2max (obstacle)
 
 // ---------------------------------------------------------------------------
 // Unpack g once: decode the two corner IDs with state2coord into index boxes
 // ---------------------------------------------------------------------------
-struct Box {
-    int16_t lo[3], hi[3];     // 1-based inclusive cell coordinates of the successor box
-    bool outside;             // true if xi_0 is a possible successor
-};
-
 vector<Box> unpack(const SymbolicAbstraction& A) {
     vector<Box> B(A.g.size());
     for (size_t e = 0; e < A.g.size(); ++e) {
@@ -163,6 +149,55 @@ vector<uint16_t> build_controller(const SymbolicAbstraction& A, const vector<uin
             if (all_succ_in_Z(B[(size_t)xi * A.n_sigma + s], In)) h[xi] |= (uint16_t)(1u << s);
     }
     return h;
+}
+
+vector<array<int32_t, 2>> filter_safe_transitions(
+    const vector<array<int32_t, 2>>& g) {
+    const array<int, 4> p_x = {
+        1, n_x[0], n_x[0] * n_x[1], n_x[0] * n_x[1] * n_x[2]
+    };
+    const int n_states = p_x[3];
+    const int n_commands = n_u[0] * n_u[1];
+    if (g.size() != static_cast<size_t>(n_states) * n_commands)
+        throw invalid_argument("g does not match dynamics.hpp");
+
+    // Validate before unpacking, which assumes valid IDs and spatial bounds.
+    for (const auto& box : g) {
+        if (box[0] == 0 && box[1] == 0) continue;
+        for (int corner : box)
+            if (corner < 1 || corner > n_states)
+                throw invalid_argument("Invalid successor ID");
+        const auto lo = state2coord<3>(box[0], p_x);
+        const auto hi = state2coord<3>(box[1], p_x);
+        if (lo[0] > hi[0] || lo[1] > hi[1])
+            throw invalid_argument("Reversed spatial bounds");
+    }
+
+    Vec3 d_x;
+    for (int d = 0; d < 3; ++d)
+        d_x[d] = (bound_x_hi[d] - bound_x_lo[d]) / n_x[d];
+    // Safety synthesis only uses g and the grid; velocities are for simulation.
+    const vector<Vec2> unused_velocities;
+    const SymbolicAbstraction A{
+        g, unused_velocities, d_x, p_x, n_states, n_commands
+    };
+    const auto boxes = unpack(A);
+    const auto safe = safe_set(A);
+    int iterations = 0;
+    const auto winning = algorithm1(A, safe, boxes, iterations);
+    const auto commands = build_controller(A, winning, boxes);
+
+    auto g_safe = g;
+    for (int cell = 1; cell <= n_states; ++cell) {
+        for (int command = 1; command <= n_commands; ++command) {
+            const bool allowed =
+                (commands[cell - 1] & (1u << (command - 1))) != 0;
+            if (!allowed)
+                g_safe[static_cast<size_t>(cell - 1) * n_commands
+                       + command - 1] = {0, 0};
+        }
+    }
+    return g_safe;
 }
 
 // Independent check of Theorem 2 by brute force: enumerate EVERY successor cell
