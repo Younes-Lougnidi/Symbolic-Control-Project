@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <cmath>
 
 // we will set some tools we will need for simplicity and readability
 using VEC_N = std::vector<double>;
@@ -16,7 +17,7 @@ const double beta = 0.045;
 const double gamma = 0.09;
 
 // let's set the system dynamics:
-VEC_N f(const VEC_N& T, const VEC_N& u){
+inline VEC_N f(const VEC_N& T, const VEC_N& u){
     // the returned result instantiation
     int N = T.size();
     VEC_N result(N);
@@ -31,7 +32,7 @@ VEC_N f(const VEC_N& T, const VEC_N& u){
 }
 
 // The reachable_bounds, we will compute it from the corners (Check report for proof):
-Bounds reachable_bounds(const VEC_N& T_low, const VEC_N& T_high, const VEC_N& u){
+inline Bounds reachable_bounds(const VEC_N& T_low, const VEC_N& T_high, const VEC_N& u){
     return {f(T_low,u),f(T_high,u)};
 }
 
@@ -52,18 +53,24 @@ const double d_u = (u_hi-u_lo)/(nu-1);
 // now we are going to add in the state multipliers
 
 
-std::vector<long long> multiplier(int N, int base){
+inline std::vector<long long> multiplier(int N, int base){
     std::vector<long long> result(N+1);
     for (int i = 0 ; i<N+1 ; i++){
-        result[i] = pow(base,i);
+        result[i] = std::llround(std::pow(base, i));
     }
     return result;
 }
+/*
+These two are indespensable , but unfortunately since N is a local variable in main
+ they can't be initilized here and so this is a copy paste code
+to use in a main.cpp file upon inputing the N we want to use in the experiment
+
+
 // p_T:
 std::vector<long long> p_T = multiplier(N,cpr); // N has to be passed as a global param
 
 // p_u:
 std::vector<long long> p_u = multiplier(N,nu);
-
+*/
 
 }
