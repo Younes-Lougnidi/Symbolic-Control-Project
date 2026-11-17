@@ -3,7 +3,7 @@
 // MATLAB: i = (I-1)' * p_x(1:length(I)) + 1
 #pragma once
 #include <array>
-
+ 
 template <size_t N>
 int coord2state(const std::array<int, N>& I, const std::array<int, N + 1>& p) {
     int i = 1;

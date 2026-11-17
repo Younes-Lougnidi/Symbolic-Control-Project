@@ -1,0 +1,158 @@
+\documentclass[11pt,a4paper]{article}
+
+% ------------------------------------------------------------
+% Packages
+% ------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,left=2.5cm,right=2.5cm,top=1.2cm,bottom=2.5cm,includehead,headheight=2.8cm,headsep=0.5cm,footskip=1cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\usepackage{caption}
+\usepackage{placeins}
+\usepackage{float}
+\usepackage[most]{tcolorbox}
+\graphicspath{{figures/}}
+\captionsetup{font=small,labelfont=bf,skip=8pt}
+\definecolor{um6pred}{RGB}{217,74,40}
+\tcbset{colback=um6pred!4,colframe=um6pred!65!black,fonttitle=\bfseries,boxrule=.6pt,arc=2mm,left=3mm,right=3mm,breakable}
+\setlength{\parskip}{5pt}
+\setlength{\parindent}{0pt}
+\raggedbottom
+\setlength{\textfloatsep}{14pt plus 2pt minus 2pt}
+\setlength{\intextsep}{14pt plus 2pt minus 2pt}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.7}
+
+% ------------------------------------------------------------
+% Colors and code listings
+% ------------------------------------------------------------
+
+\definecolor{codebg}{RGB}{242,241,236}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{codebg},
+  frame=single,
+  breaklines=true,
+  numbers=left,
+  numberstyle=\tiny,
+  keywordstyle=\color{blue},
+  commentstyle=\itshape\color{gray},
+  stringstyle=\color{orange!80!black}
+}
+
+% ------------------------------------------------------------
+% Report information (edit here)
+% ------------------------------------------------------------
+\newcommand{\ReportTitle}{Symbolic Control Project}
+\newcommand{\CourseName}{Computation Theory}
+\newcommand{\Professor}{Adnane Saoud}
+\newcommand{\Session}{Fall 2026}
+\newcommand{\Program}{Computer Engineering} % change or remove if needed
+\newcommand{\RepoLink}{{\small\url{https://github.com/Younes-Lougnidi/Symbolic-Control-Project}}}
+
+% Logos: place UM6P_logo.png and CC_logo.png in the figures folder.
+% If they are missing, text placeholders are used so the file still compiles.
+\newcommand{\UMlogo}[1]{\IfFileExists{figures/UM6P_logo.png}{\includegraphics[height=#1]{figures/UM6P_logo.png}}{\textbf{\color{um6pred}UM6P}}}
+\newcommand{\CClogo}[1]{\IfFileExists{figures/CC_logo.png}{\includegraphics[height=#1]{figures/CC_logo.png}}{\textbf{College of Computing}}}
+
+% ------------------------------------------------------------
+% Header / footer
+% ------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\vtop{\hbox{\UMlogo{2.5cm}}}}
+\rhead{\vtop{\hbox{\CClogo{2.1cm}}}}
+\renewcommand{\headrulewidth}{0.4pt}
+\lfoot{Symbolic Control Project}
+\cfoot{Page \thepage}
+\rfoot{Prof.\ \Professor}
+\renewcommand{\footrulewidth}{0pt}
+
+% Part and section style
+\titleformat{\part}[display]{\centering\Huge\bfseries\color{um6pred}}{Part \thepart}{10pt}{}
+\titlespacing*{\part}{0pt}{12pt}{24pt}
+\titleformat{\section}{\Large\bfseries\color{um6pred}}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}[block]{\normalsize\bfseries}{}{0pt}{}
+\titlespacing*{\paragraph}{0pt}{10pt}{4pt}
+
+\setlist[itemize]{itemsep=2pt}
+\setlist[enumerate]{itemsep=2pt}
+
+% ============================================================
+\begin{document}
+
+% ------------------------------------------------------------
+% Title page
+% ------------------------------------------------------------
+\begin{titlepage}
+  \thispagestyle{empty}
+  \vspace*{-3.2cm}
+  \noindent
+  \vtop{\hbox{\UMlogo{3.8cm}}}\hfill\vtop{\hbox{\CClogo{3.2cm}}}
+
+  \vspace{2.5cm}
+  \begin{center}
+    {\LARGE\bfseries \ReportTitle\par}
+    \vspace{1cm}
+    {\Large\bfseries \CourseName\ Course\par}
+    \vspace{0.2cm}
+    {\large UM6P College of Computing\par}
+    \vspace{0.8cm}
+    \textbf{Professor:} \Professor \quad
+    \textbf{Program:} \Program\\[2pt]
+    \textbf{Session:} \Session
+  \end{center}
+
+  \vspace{1.2cm}
+  \hrule
+  \vspace{0.6cm}
+  \begin{center}
+    {\large\bfseries Team Information}\\[8pt]
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabular}{|l|l|}
+      \hline
+      \textbf{Member 1} & Omar Tsouli \\ \hline
+      \textbf{Member 2} & Aymane Raiss \\ \hline
+      \textbf{Member 3} & Amine Chrif \\ \hline
+      \textbf{Member 4} & Rayane Khaldi \\ \hline
+      \textbf{Member 5} & Younes Lougnidi \\ \hline
+      \textbf{Repository Link} & \RepoLink \\ \hline
+    \end{tabular}
+  \end{center}
+  \vspace{0.3cm}
+  \hrule
+\end{titlepage}
+
+% ------------------------------------------------------------
+% Table of contents
+% ------------------------------------------------------------
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\thispagestyle{fancy}
+\tableofcontents
+\clearpage
+
+% ============================================================
+\part{Temperature Regulation Symbolic Control}
+
+
+\section{Introduction}
+
+
+
+\end{document}
