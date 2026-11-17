@@ -8,7 +8,7 @@
 //
 // If your header files have other names, change the three #include lines below.
 
-// THIS WAS AI generated, I generated this with AI to test everything
+// THIS WAS AI generated, I generated this with AI to test everything in the 3 files
 
 #include "dynamics.hpp"
 #include "coord2state.hpp"
