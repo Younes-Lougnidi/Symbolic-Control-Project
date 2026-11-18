@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.18)  16 NOV 2026 23:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.18)  18 NOV 2026 07:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -792,12 +792,12 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-<figures/UM6P_logo.png, id=51, 448.67625pt x 448.67625pt>
+<figures/UM6P_logo.png, id=83, 448.67625pt x 448.67625pt>
 File: figures/UM6P_logo.png Graphic file (type png)
 <use figures/UM6P_logo.png>
 Package pdftex.def Info: figures/UM6P_logo.png  used on input line 106.
 (pdftex.def)             Requested size: 108.11581pt x 108.12054pt.
-<figures/CC_logo.png, id=52, 1204.5pt x 1204.5pt>
+<figures/CC_logo.png, id=84, 1204.5pt x 1204.5pt>
 File: figures/CC_logo.png Graphic file (type png)
 <use figures/CC_logo.png>
 Package pdftex.def Info: figures/CC_logo.png  used on input line 106.
@@ -852,7 +852,10 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 134.
  [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./figures/UM6P_logo.png> <./figures/CC_logo.png>] (./main.toc)
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./figures/UM6P_logo.png> <./figures/CC_logo.png>] (./main.toc
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 5.
+)
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
@@ -869,38 +872,84 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 <to be read again> 
                    \relax 
 l.148 \clearpage
-                 [1]
+                 [1{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
 File: figures/UM6P_logo.png Graphic file (type png)
 <use figures/UM6P_logo.png>
-Package pdftex.def Info: figures/UM6P_logo.png  used on input line 158.
+Package pdftex.def Info: figures/UM6P_logo.png  used on input line 191.
 (pdftex.def)             Requested size: 71.12558pt x 71.13188pt.
 File: figures/CC_logo.png Graphic file (type png)
 <use figures/CC_logo.png>
-Package pdftex.def Info: figures/CC_logo.png  used on input line 158.
+Package pdftex.def Info: figures/CC_logo.png  used on input line 191.
 (pdftex.def)             Requested size: 59.75066pt x 59.75095pt.
  [2
 
-] (./main.aux)
+{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 193.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 196.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 196.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 196.
+
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 200.
+File: figures/UM6P_logo.png Graphic file (type png)
+<use figures/UM6P_logo.png>
+Package pdftex.def Info: figures/UM6P_logo.png  used on input line 221.
+(pdftex.def)             Requested size: 71.12558pt x 71.13188pt.
+File: figures/CC_logo.png Graphic file (type png)
+<use figures/CC_logo.png>
+Package pdftex.def Info: figures/CC_logo.png  used on input line 221.
+(pdftex.def)             Requested size: 59.75066pt x 59.75095pt.
+[3]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 230.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+File: figures/UM6P_logo.png Graphic file (type png)
+<use figures/UM6P_logo.png>
+Package pdftex.def Info: figures/UM6P_logo.png  used on input line 264.
+(pdftex.def)             Requested size: 71.12558pt x 71.13188pt.
+File: figures/CC_logo.png Graphic file (type png)
+<use figures/CC_logo.png>
+Package pdftex.def Info: figures/CC_logo.png  used on input line 264.
+(pdftex.def)             Requested size: 59.75066pt x 59.75095pt.
+ [4{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+File: figures/UM6P_logo.png Graphic file (type png)
+<use figures/UM6P_logo.png>
+Package pdftex.def Info: figures/UM6P_logo.png  used on input line 264.
+(pdftex.def)             Requested size: 71.12558pt x 71.13188pt.
+File: figures/CC_logo.png Graphic file (type png)
+<use figures/CC_logo.png>
+Package pdftex.def Info: figures/CC_logo.png  used on input line 264.
+(pdftex.def)             Requested size: 59.75066pt x 59.75095pt.
+ [5] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1F635EA13943478710479B9F41565F41;366.
+(rerunfilecheck)             Checksum: 76D7D83FA54C6AFE8E831A2F78749DE5;1413.
  ) 
 Here is how much of TeX's memory you used:
- 31751 strings out of 474116
- 628957 string characters out of 5743682
- 1934187 words of memory out of 5000000
- 53524 multiletter control sequences out of 15000+600000
- 619743 words of font info for 115 fonts, out of 8000000 for 9000
+ 31927 strings out of 474116
+ 631877 string characters out of 5743682
+ 1938187 words of memory out of 5000000
+ 53609 multiletter control sequences out of 15000+600000
+ 642825 words of font info for 161 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 93i,17n,99p,1136b,487s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (3 pages, 192448 bytes).
+ 93i,18n,99p,1136b,487s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (6 pages, 322098 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
- 5 named destinations out of 1000 (max. 500000)
- 35511 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 222 PDF objects out of 1000 (max. 8388607)
+ 151 compressed objects within 2 object streams
+ 16 named destinations out of 1000 (max. 500000)
+ 49911 words of extra memory for PDF output out of 51595 (max. 10000000)
 
