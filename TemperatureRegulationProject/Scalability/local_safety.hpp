@@ -3,8 +3,8 @@
 #include "../abstraction/abstraction.hpp"
 #include <algorithm>
 #include <array>
-#include <cstdint>
 #include <stdexcept>
+#include <vector>
 
 namespace local_safety {
 
@@ -18,6 +18,8 @@ inline HeaterChoices safe_heaters(int left_bin, int middle_bin, int right_bin) {
         // Only the middle room's heater enters its equation.
         const VEC_N heaters{0.0, dyn::u_lo + level * dyn::d_u, 0.0};
         const auto [next_low, next_high] = dyn::reachable_bounds(low, high, heaters);
+        // For a fixed heater, warming any of the three rooms can only warm the
+        // middle room's next temperature. These two corners give its exact extremes.
         safe[level] = next_low[1] >= dyn::T_lo && next_high[1] <= dyn::T_hi;
     }
     return safe;
@@ -44,35 +46,23 @@ inline SafetyTable build_safety_table() {
     return table;
 }
 
-// Read each current bin once in room order. Send (room index, heater level)
-// to the caller. Room 0 is emitted last because its left neighbour is the last room.
-template<class ReadBin, class EmitCommand>
-void apply_one_step(const SafetyTable& table, std::uint64_t rooms,
-                    ReadBin read_bin, EmitCommand emit_command) {
+// Given a building cell, return the allowed heater levels for every room.
+// A building command is safe exactly when choices[room][level] is true for every room.
+inline std::vector<HeaterChoices> safe_commands_for_cell(
+        const SafetyTable& table, const abstraction::Cell& bins) {
+    const auto rooms = bins.size();
     if (rooms < 3) throw std::invalid_argument("A ring needs at least three rooms");
-
-    auto next_bin = [&]() {
-        int bin = read_bin();
+    for (int bin : bins) {
         if (bin < 0 || bin >= dyn::cpr) throw std::out_of_range("Invalid temperature bin");
-        return bin;
-    };
-    auto choose = [&](int left, int middle, int right) {
-        const auto& choices = table.allowed[left][middle][right];
-        return static_cast<int>(std::find(choices.begin(), choices.end(), true) - choices.begin());
-    };
-
-    const int first = next_bin();
-    const int second = next_bin();
-    int left = first;
-    int middle = second;
-    for (std::uint64_t room = 1; room < rooms - 1; ++room) {
-        const int right = next_bin();
-        emit_command(room, choose(left, middle, right));
-        left = middle;
-        middle = right;
     }
-    emit_command(rooms - 1, choose(left, middle, first));
-    emit_command(0, choose(middle, first, second));
+
+    std::vector<HeaterChoices> choices(rooms);
+    for (std::size_t room = 0; room < rooms; ++room) {
+        const auto left = (room == 0) ? rooms - 1 : room - 1;
+        const auto right = (room + 1) % rooms;
+        choices[room] = table.allowed[bins[left]][bins[room]][bins[right]];
+    }
+    return choices;
 }
 
 } // namespace local_safety
