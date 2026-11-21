@@ -1,0 +1,3 @@
+method,N,states,commands,transitions,abstraction_s,synthesis_s,total_s,peak_rss_bytes,estimated_data_bytes,certified_states,total_safe_pairs,controllable_pct,verified,status
+Reference,3,1000,27,27000,0.008552,0.013047,0.021600,4734976,2429632,1000,23582,100.00,PASS,"OK"
+Reference,4,10000,81,810000,0.127669,0.422410,0.550079,85327872,80250624,10000,687400,100.00,PASS,"OK"
