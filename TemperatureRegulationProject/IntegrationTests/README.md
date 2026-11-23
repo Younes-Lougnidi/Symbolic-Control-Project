@@ -56,6 +56,24 @@ g++ -O2 -std=c++17 -Wall -Wextra \
 - Policy corruption checks mutate a valid controller in 7 ways (exiting command, uncertified successor, negative ID, out-of-range ID, duplicate ID, truncated table, flipped exit flag) to confirm `verify_controller` actually rejects invalid policies.
 - `check_trajectory` and `verify_csv_trace` check every recorded temperature directly against `[17, 22]`, replay `f(T(k), u(k))`, and check policy membership without trusting `SimulationResult::safe`. Finite-horizon simulations demonstrate safe behavior on tested starts; they do not prove infinite-time safety for all initial states.
 
+## Building and verifying the local safety controller
+
+From `TemperatureRegulationProject/Scalability`, build the two executables on Windows:
+
+```powershell
+g++ -O2 -std=c++17 -Wall -Wextra correctness_verification.cpp -o verify_local_synthesis.exe
+g++ -O2 -std=c++17 -Wall -Wextra ../IntegrationTests/benchmark_policy_application.cpp -lpsapi -o measure_local_synthesis.exe
+```
+
+Run the correctness check and the construction timing separately:
+
+```powershell
+.\verify_local_synthesis.exe
+.\measure_local_synthesis.exe --build-only 1000000000000
+```
+
+The verifier compares all three-room successor boxes and exit flags with the explicit abstraction, then checks the winning domain and the complete controller at three and four rooms. The build-only command reports `T_abs` for the 3,000 local transitions, `T_ctrl` for the domain certificate and maximal controller, their combined time, and the process peak RSS through synthesis. Every ring with at least three rooms uses the same local transitions. When every neighbourhood has an allowed level, simultaneous choices keep the entire grid invariant. Synthesis then returns the full grid as the winning domain (100%) and the table of all allowed levels. Build-only mode stops before generating room inputs.
+
 ## Baseline measurements
 
 Machine: Apple M3 Pro, 18 GiB RAM, macOS (arm64).  
