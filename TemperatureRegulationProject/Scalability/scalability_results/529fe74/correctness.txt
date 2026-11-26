@@ -1,0 +1,52 @@
+All local successor boxes agree with the explicit abstraction for N=3
+All 27000 cell-command decisions agree for N=3
+All 810000 cell-command decisions agree for N=4
+
+[Test 1] Independent trajectory checker self-tests...
+  ok   Genuine safe trajectory accepted
+  ok   Lying safe=true flag with T=16.95 rejected directly
+  ok   Lying safe=true flag with T=22.05 rejected directly
+  ok   NaN temperature with safe=true rejected
+  ok   In-bounds dynamics tampering rejected
+  ok   Broken K+1 temperature length invariant rejected
+  -> PASSED
+
+[Test 2] Cross-module interfaces, boundaries, and overflow guards...
+  ok   All 1,000 state IDs match independent base-10 encode/decode
+  ok   All 27 command IDs (incl. ID 0 = all-off) match independent base-3 decode
+  ok   3-room reference step matches dyn::f & reference_step
+  ok   Internal boundaries (upper bin) and 22.0 -> bin 9 verified
+  ok   Out-of-range and non-finite temperatures rejected (not clamped)
+  ok   safety_abstraction::build_abstraction(2) throws invalid_argument
+  ok   safety_abstraction::build_abstraction(13) rejects 30^13 overflow
+  ok   safety_abstraction::multiplier(19, 10) rejects 10^19 overflow
+  -> PASSED
+
+[Test 3] Exhaustive independent audit of N=3 abstraction (27,000 pairs)...
+  27000 state-command transitions independently recomputed, 0 mismatch(es)
+  Analytical check (u=(0.3,0.3,0.3), cmd ID 13): 1000/1000 states certified, cmd 13 present everywhere = yes
+  -> PASSED
+
+[Test 4] Controller verification & intentional policy corruption tests...
+  ok   Genuine synthesized N=3 controller verified (1000/1000 states, 23582 safe pairs, 171758 successor checks)
+  ok   Corruption 1: exiting command (cell 0 -> cmd 0) rejected
+  ok   Corruption 2: distinct successor uncertified (cell 0 -> cell 111) rejected
+  ok   Corruption 3: negative command ID (-1) rejected
+  ok   Corruption 4: command ID == num_commands (27) rejected
+  ok   Corruption 5: duplicate command ID in cell 10 rejected
+  ok   Corruption 6: truncated controller (999 != 1000 states) rejected
+  ok   Corruption 7: corrupted abstraction exit flag detected
+  -> PASSED
+
+[Test 5] Closed-loop simulations (ordinary, boundary, invalid, uncertified, sweep)...
+  Deterministic reproducibility (N=3, 50 steps): identical
+  Named N=3 scenarios: 18 / 18 passed
+  Fixed-seed sweep (N=3, seed=2026): 200 / 200 passed
+  N=4 simulations: 3/3 named, 50/50 random passed
+  -> PASSED
+
+[Test 6] Independent verification of Amine's CSV traces (simulation/README.md Sec. 5)...
+  ok   sim_trace1_cold.csv        rows=51 cmds=50 T in [17.000, 18.005] max_step_err=8.08e-06
+  ok   sim_trace2_hot.csv         rows=51 cmds=50 T in [17.147, 22.000] max_step_err=8.24e-06
+  ok   sim_trace3_mixed.csv       rows=51 cmds=50 T in [17.000, 22.000] max_step_err=8.88e-06
+  -> PASSED

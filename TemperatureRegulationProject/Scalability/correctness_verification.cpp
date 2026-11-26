@@ -6,6 +6,34 @@
 
 using local_safety::SafetyTable;
 
+// Reassemble each three-room successor box from the local transitions. This
+// checks the actual bin bounds as well as transitions that can leave the grid.
+void verify_local_abstraction(const local_safety::LocalAbstraction& local,
+                              const abstraction::Abstraction& model) {
+    for (abstraction::Id cell = 0; cell < model.num_states; ++cell) {
+        const auto bins = abstraction::decode_cell(cell, model.N);
+        for (abstraction::Id command = 0; command < model.num_commands; ++command) {
+            const auto& box = model.transitions[cell * model.num_commands + command];
+            auto digits = command;
+            bool leaves_safe_set = false;
+            for (int room = 0; room < model.N; ++room) {
+                const auto left = bins[(room + model.N - 1) % model.N];
+                const auto right = bins[(room + 1) % model.N];
+                const auto& next = local.transitions[left][bins[room]][right][digits % dyn::nu];
+                digits /= dyn::nu;
+                if (next.lower != box.lower[room] || next.upper != box.upper[room])
+                    throw std::runtime_error("Local successor bins differ at cell " + std::to_string(cell)
+                                             + ", command " + std::to_string(command) + ", room " + std::to_string(room));
+                leaves_safe_set |= next.leaves_safe_set;
+            }
+            if (leaves_safe_set != box.leaves_safe_set)
+                throw std::runtime_error("Local exit flags differ at cell " + std::to_string(cell)
+                                         + ", command " + std::to_string(command));
+        }
+    }
+    std::cout << "All local successor boxes agree with the explicit abstraction for N=" << model.N << '\n';
+}
+
 // Rayane's verifier expects global command IDs. Expand our per-room choices
 // only on the small test grids, in the same order as the reference controller.
 simulation::Controller explicit_test_controller(const SafetyTable& table,
@@ -34,10 +62,15 @@ simulation::Controller explicit_test_controller(const SafetyTable& table,
 }
 
 // Give our controller to Rayane's existing checks, including Amine's saved traces.
-bool run_small_suite(const SafetyTable& table) {
+bool run_small_suite(const local_safety::LocalAbstraction& local, const local_safety::LocalSafetyResult& result) {
     const auto model3 = safety_abstraction::build_abstraction(3);
-    const auto ctrl3 = explicit_test_controller(table, model3);
-    const auto ctrl4 = explicit_test_controller(table, safety_abstraction::build_abstraction(4));
+    verify_local_abstraction(local, model3);
+    const auto ctrl3 = explicit_test_controller(result.controller, model3);
+    const auto ctrl4 = explicit_test_controller(result.controller, safety_abstraction::build_abstraction(4));
+    const auto winning = [](const auto& commands) { return !commands.empty(); };
+    if (!result.full_grid_winning || !std::all_of(ctrl3.begin(), ctrl3.end(), winning) ||
+        !std::all_of(ctrl4.begin(), ctrl4.end(), winning))
+        throw std::runtime_error("Full-grid winning domain disagrees with the explicit controller");
     std::vector<integ::SimTestRecord> simulations;
     std::vector<integ::CsvTraceAudit> traces;
     int total3 = 0, pass3 = 0, total4 = 0, pass4 = 0;
@@ -55,8 +88,9 @@ bool run_small_suite(const SafetyTable& table) {
 // ./verify --replay 65538      Two physical updates across a block boundary
 int main(int argc, char** argv) {
     try {
-        const auto table = local_safety::build_safety_table();
-        if (argc == 1) return run_small_suite(table) ? 0 : 1;
+        const auto local = local_safety::build_local_abstraction();
+        const auto result = local_safety::synthesize_local_safety(local);
+        if (argc == 1) return run_small_suite(local, result) ? 0 : 1;
         if (argc != 3 || std::string_view(argv[1]) != "--replay")
             throw std::invalid_argument("Usage: verify [--replay ROOM_COUNT]");
         const std::string_view arg = argv[2];
@@ -65,7 +99,7 @@ int main(int argc, char** argv) {
         const auto parsed = std::from_chars(arg.data(), end, rooms);
         if (parsed.ec != std::errc{} || parsed.ptr != end || rooms < 3)
             throw std::invalid_argument("Expected a room count of at least three");
-        large_ring_replay::run(table, rooms);
+        large_ring_replay::run(result.controller, rooms);
     } catch (const std::exception& e) {
         std::cerr << e.what() << '\n';
         return 1;
